@@ -1,13 +1,11 @@
 package io.github.pedrohss2.mascartoes.dto;
 
-import io.github.pedrohss2.mascartoes.enums.Bandeira;
+import io.github.pedrohss2.mascartoes.model.enums.Bandeira;
 import io.github.pedrohss2.mascartoes.model.Cartao;
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Getter

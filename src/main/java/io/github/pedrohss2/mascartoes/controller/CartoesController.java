@@ -1,14 +1,15 @@
 package io.github.pedrohss2.mascartoes.controller;
 
+import io.github.pedrohss2.mascartoes.dto.CartaoClienteDTO;
 import io.github.pedrohss2.mascartoes.dto.CartaoDTO;
 import io.github.pedrohss2.mascartoes.model.Cartao;
+import io.github.pedrohss2.mascartoes.service.CartaoClienteService;
 import io.github.pedrohss2.mascartoes.service.CartaoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import javax.ws.rs.core.Response;
 import java.net.URI;
 import java.util.List;
 
@@ -19,7 +20,10 @@ public class CartoesController {
     @Autowired
     private CartaoService cartaoService;
 
-    @GetMapping
+    @Autowired
+    private CartaoClienteService clienteService;
+
+    @GetMapping(params = "renda")
     public ResponseEntity<List<CartaoDTO>> procurarPorRenda(@RequestParam(value = "renda", defaultValue = "") Long renda) {
         List<CartaoDTO> cartaoDTO = cartaoService.procurarCartaoPorRenda(renda);
 
@@ -37,5 +41,12 @@ public class CartoesController {
                 toUri();
 
         return ResponseEntity.created(uri).build();
+    }
+
+    @GetMapping(params = "cpf")
+    public ResponseEntity<List<CartaoClienteDTO>> procurarPorCpf(@RequestParam(name = "cpf", defaultValue = "") String cpf) {
+        List<CartaoClienteDTO> cartaoClienteDTOS = clienteService.procurarCartaoPorCpf(cpf);
+
+        return ResponseEntity.ok().body(cartaoClienteDTOS);
     }
 }

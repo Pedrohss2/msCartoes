@@ -37,4 +37,5 @@ public class CartaoService {
 
         return cartao.stream().map(CartaoDTO::new).toList();
     }
+
 }

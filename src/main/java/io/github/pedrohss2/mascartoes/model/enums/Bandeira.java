@@ -1,4 +1,4 @@
-package io.github.pedrohss2.mascartoes.enums;
+package io.github.pedrohss2.mascartoes.model.enums;
 
 import lombok.Getter;
 
