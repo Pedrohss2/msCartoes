@@ -30,7 +30,6 @@ public class Cartao {
     @Column(name = "limite_basico", nullable = false)
     private BigDecimal limiteBasico;
 
-
     public Cartao(Long id, String nome, Bandeira bandeira, BigDecimal renda, BigDecimal limiteBasico) {
         this.nome = nome;
         this.bandeira = bandeira;
