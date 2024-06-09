@@ -4,7 +4,6 @@ import io.github.pedrohss2.mascartoes.model.CartaoCliente;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Data

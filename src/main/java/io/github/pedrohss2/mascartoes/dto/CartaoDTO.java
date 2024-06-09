@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 import java.math.BigDecimal;
 
 @Getter
@@ -14,8 +16,11 @@ import java.math.BigDecimal;
 public class CartaoDTO {
 
     private Long id;
+    @NotBlank(message = "Campo 'nome' não pode ser vazio")
     private String nome;
+    @NotBlank(message = "Campo 'bandeira' não pode ser vazio")
     private Bandeira bandeira;
+    @Min(value = 100, message = "Renda pecisa ser no minimo 100 reais")
     private BigDecimal renda;
     private BigDecimal limiteBasico;
 
