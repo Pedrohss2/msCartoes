@@ -18,7 +18,6 @@ public class CartaoDTO {
     private Long id;
     @NotBlank(message = "Campo 'nome' não pode ser vazio")
     private String nome;
-    @NotBlank(message = "Campo 'bandeira' não pode ser vazio")
     private Bandeira bandeira;
     @Min(value = 100, message = "Renda pecisa ser no minimo 100 reais")
     private BigDecimal renda;
