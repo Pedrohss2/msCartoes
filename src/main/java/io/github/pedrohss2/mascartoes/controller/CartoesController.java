@@ -5,6 +5,7 @@ import io.github.pedrohss2.mascartoes.dto.CartaoDTO;
 import io.github.pedrohss2.mascartoes.model.Cartao;
 import io.github.pedrohss2.mascartoes.service.CartaoClienteService;
 import io.github.pedrohss2.mascartoes.service.CartaoService;
+import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -25,6 +26,7 @@ public class CartoesController {
     private CartaoClienteService clienteService;
 
     @GetMapping(params = "renda")
+    @Operation(summary = "Procurar um cartao por renda")
     public ResponseEntity<List<CartaoDTO>> procurarPorRenda(@RequestParam(value = "renda", defaultValue = "") Long renda) {
         List<CartaoDTO> cartaoDTO = cartaoService.procurarCartaoPorRenda(renda);
 
@@ -32,6 +34,7 @@ public class CartoesController {
     }
 
     @GetMapping(params = "cpf")
+    @Operation(summary = "Procurar um cartao por cpf")
     public ResponseEntity<List<CartaoClienteDTO>> procurarPorCpf(@RequestParam(name = "cpf", defaultValue = "") String cpf) {
         List<CartaoClienteDTO> cartaoClienteDTOS = clienteService.procurarCartaoPorCpf(cpf);
 
@@ -39,6 +42,7 @@ public class CartoesController {
     }
 
     @PostMapping
+    @Operation(summary = "Criar um cartao")
     public ResponseEntity<CartaoDTO> criar(@Valid @RequestBody CartaoDTO cartaoDTO) {
         cartaoDTO = cartaoService.criar(cartaoDTO);
 
@@ -52,6 +56,7 @@ public class CartoesController {
     }
 
     @PutMapping
+    @Operation(summary = "Atualizar um cartao")
     public ResponseEntity<CartaoDTO> atualizar(@Valid @RequestBody CartaoDTO cartaoDTO) {
         cartaoDTO = cartaoService.atualizar(cartaoDTO);
 
@@ -59,6 +64,7 @@ public class CartoesController {
     }
 
     @DeleteMapping("/{id}")
+    @Operation(summary = "Deletar um cartao pelo id")
     public ResponseEntity<Void> deletar(@PathVariable Long id) {
         cartaoService.deletar(id);
 
