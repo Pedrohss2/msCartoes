@@ -4,9 +4,6 @@
 
 - CRUD cliente
 
-## Uso/Exemplos
-
-
 Procurar cartao por cpf de um cliente
 
 | Parâmetro   | Tipo       | Descrição                           |
