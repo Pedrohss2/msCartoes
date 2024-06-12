@@ -2,7 +2,7 @@
 
 ## Usagem/Exemplos
 
-- CRUD cliente
+- CRUD cartão
 
 Procurar cartao por cpf de um cliente
 
