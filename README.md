@@ -19,7 +19,7 @@ Body (raw)
 [
   {
     "id": 0,
-    "nome": "Bradesci visa",
+    "nome": "Bradesco visa",
     "bandeira": "VISA",
     "renda": 5000,
     "limiteBasico": 0
